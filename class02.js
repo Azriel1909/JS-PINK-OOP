@@ -8,14 +8,29 @@ class Cliente {
 
 class CuentaCorriente {
   numero
-  saldo
+  #saldo
   agencia
+
+  // Constructor (LO que normalmente se usa para la clase, comportamiento por defecto) - Ejecutadas al momento de crear instancias
+
+  constructor() {
+    this.#saldo = 0;
+    this.numero = ''
+    this.agencia = ''
+  }
+
   // Métodos
   deposito(valor) {
-    this.saldo = (this.saldo) + valor;
+    if (valor > 0) {
+      this.#saldo += valor;
+    }
   }
   retiro(valor) {
-    this.saldo = (this.saldo) - valor;
+    // Verificación de la condición
+    if (valor <= this.#saldo) {
+      this.#saldo -= valor;
+      console.log('La cantidad ha retirar rebasa a la cantidad de saldo actual.')
+    }
   }
 }
 
@@ -36,6 +51,15 @@ cuentaCliente1.retiro(100)
 console.log(cuentaCliente1)
 
 
+const cuentaCliente2 = new CuentaCorriente()
+console.log(cuentaCliente2)
+cuentaCliente2.deposito(100)
+console.log(cuentaCliente2)
+cuentaCliente2.retiro(500)
+console.log(cuentaCliente2)
 
-
-
+// Atributos privados
+/**
+ * # - Privado : No visible
+ * ! https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Classes/Private_class_fields - Docs about Private Classes
+*/
