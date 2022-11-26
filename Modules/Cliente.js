@@ -1,6 +1,6 @@
-class Cliente {
+export class Cliente {
   nombreCliente 
-  numCuenta
-  saldoCuenta
+  dniCliente
+  rutCliente
 }
 
