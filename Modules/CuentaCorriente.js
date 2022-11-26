@@ -1,11 +1,23 @@
+import { Cliente } from "./Cliente.js"
 export class CuentaCorriente {
-  cliente
+  #cliente
   numero
   agencia
   #saldo
 
+  set cliente(valor) {
+    if (valor instanceof Cliente){
+      this.#cliente = valor
+      // Protejo mi atributo privado
+    }
+  }
+
+  get cliente() {
+    return this.#cliente
+  }
+
   constructor() {
-    this.cliente = null // Objeto del tipo de clase Cliente
+    this.#cliente = null // Objeto del tipo de clase Cliente
     this.numero = ''
     this.agencia = ''
     this.#saldo = 0;

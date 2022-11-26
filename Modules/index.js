@@ -15,6 +15,7 @@ cuentaCliente1.cliente = cliente1 // Composición de clases
 console.log(`Cuenta de ${cliente1.nombreCliente}:`)
 console.log(cuentaCliente1)
 
+console.log('DEPOSITO')
 let saldoCliente1 = cuentaCliente1.verSaldo()
 console.log(`Saldo actual de ${cliente1.nombreCliente}: ${saldoCliente1}`)
 saldoCliente1 = cuentaCliente1.deposito(5000)
@@ -50,5 +51,13 @@ saldoCliente2 = cuentaCliente2.verSaldo()
 console.log(`Saldo actual de ${cliente1.nombreCliente}: ${saldoCliente1}`)
 console.log(`Saldo actual de ${cliente2.nombreCliente}: ${saldoCliente2}`)
 
+console.log('GESTIÓN PRIVADA DE DATOS')
+console.log(cuentaCliente2.cliente)
+// NULL Y UNDEFINED
+/**
+ * UNDEFINED - Esta sin existir, no tener valores.
+ * NULL - No existe pero es explícito. 
+ * Toda variable sin valor, debe especificarse con null.
+ */
 
 
