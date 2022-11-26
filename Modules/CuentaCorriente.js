@@ -4,6 +4,8 @@ export class CuentaCorriente {
   numero
   agencia
   #saldo
+  static cantidadDeCuentas = 0
+  // No puedo acceder a el nunca como this y se le atribuye el valor directo de la clase
 
   set cliente(valor) {
     if (valor instanceof Cliente){
@@ -16,11 +18,13 @@ export class CuentaCorriente {
     return this.#cliente
   }
 
-  constructor() {
-    this.#cliente = null // Objeto del tipo de clase Cliente
-    this.numero = ''
-    this.agencia = ''
+  constructor(cliente, numero, agencia) {
+    this.cliente = cliente
+    // this.#cliente = null // Objeto del tipo de clase Cliente
+    this.numero = numero
+    this.agencia = agencia
     this.#saldo = 0;
+    CuentaCorriente.cantidadDeCuentas++; // En general
   }
 
   // Métodos
